@@ -1,0 +1,25 @@
+let password = function(str){
+  let hasuppercase = false
+  let lowercase = false
+  let hasnumber = false
+  let specialchar = false
+
+for(let i=0;i<str.length;i++){
+  let charcode = str.charCodeAt(i)
+  if(charcode>=65 && charcode<=90)
+    hasuppercase = true
+  else if(charcode>=97 && charcode<=122)
+    lowercase = true
+  else if(charcode>=48 && charcode<=57)
+    hasnumber = true
+  else if((charcode>=33 && charcode<=47) || (charcode>=58 && charcode<=64) || (charcode>=91 && charcode<=96) || (charcode>=123 && charcode<=126))
+    specialchar = true    
+    
+}
+    return hasuppercase && lowercase && hasnumber && specialchar;
+  
+};
+
+str = "Bhushan123"
+let res = password(str);
+console.log(res);
